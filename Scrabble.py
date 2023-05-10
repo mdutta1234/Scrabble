@@ -1,3 +1,8 @@
+"""
+Here we have list of words.So we first ask no. of letters they want to play with(the hand). Then we ask them how many times do they want to play the game with the given hand.
+In each hand we have a * that can be replaced with any vowel that is we can replace the star with any vowel. 
+the game allows us to either exchange a letter or replay a given hand . The word we enter is evaluated based on a formula which evaluates based on the letters used.
+"""
 import math
 import random
 import string

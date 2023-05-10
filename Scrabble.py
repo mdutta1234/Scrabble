@@ -1,12 +1,3 @@
-# 6.0001 Problem Set 3
-#
-# The 6.0001 Word Game
-# Created by: Kevin Luu <luuk> and Jenna Wiens <jwiens>
-#
-# Name          : <your name>
-# Collaborators : <your collaborators>
-# Time spent    : <total time>
-
 import math
 import random
 import string
@@ -16,10 +7,6 @@ CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
 HAND_SIZE = int(input("enter the hand size u want "))
 
 SCRABBLE_LETTER_VALUES = {'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10,'*': 0}
-
-# -----------------------------------
-# Helper code
-# (you don't need to understand this helper code)
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -57,13 +44,6 @@ def get_frequency_dict(sequence):
         freq[x] = freq.get(x,0) + 1
     return freq
 	
-
-# (end of helper code)
-# -----------------------------------
-
-#
-# Problem #1: Scoring a word
-#
 def get_word_score(word, n):
    s=0
    word=word.lower()
@@ -78,10 +58,6 @@ def get_word_score(word, n):
        
    return (s*max(1,7 * len(word) - 3 * (n-len(word))))
 
-    
-#
-# Make sure you understand how this function works and what it does!
-#
 def display_hand(hand):
     """
     Displays the letters currently in the hand.
@@ -100,10 +76,7 @@ def display_hand(hand):
              print(letter, end=' ')      # print all on the same line
     print()                              # print an empty line
 
-#
-# Make sure you understand how this function works and what it does!
-# You will need to modify this for Problem #4.
-#
+
 def deal_hand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -132,9 +105,6 @@ def deal_hand(n):
     
     return hand
 
-#
-# Problem #2: Update a hand by removing letters
-#
 def update_hand(hand, word):
     word=word.lower()
     y=get_frequency_dict(word)
@@ -167,13 +137,6 @@ def possiblewords(word):
         l.append(t)
     return l
             
-            
-    
-        
-                
-#
-# Problem #3: Test word validity
-#
 def is_valid_word(word, hand, word_list):
     word=word.lower()
     z=get_frequency_dict(word)
@@ -228,13 +191,7 @@ def finding(word,x):
     return i
             
             
-        
 
-
-        
-#
-# Problem #5: Playing a hand
-#
 def calculate_handlen(hand):
     s=0
     for i in hand.keys():
@@ -338,16 +295,6 @@ def play_game(word_list):
     print("--------------")
     print("Total score over all hands: ",score)
             
-            
-            
-
-
-
-#
-# Build data structures used for entire session and play game
-# Do not remove the "if __name__ == '__main__':" line - this code is executed
-# when the program is run directly, instead of through an import statement
-#
 if __name__ == '__main__':
     word_list = load_words()
     play_game(word_list)

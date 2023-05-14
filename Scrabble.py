@@ -58,6 +58,7 @@ def get_word_score(word, n):
            
        else:
            print("wrong input")
+	   return 0	
     
     
        
@@ -234,7 +235,7 @@ def substitute_hand(hand, letter):
     x=letter
     if x != "*":
         if letter in hand.keys():
-            while x in hand.keys():
+            while letter==x:
                 x=random.choice(y)
             hand[x]=hand[letter]
             del(hand[letter])
@@ -242,7 +243,7 @@ def substitute_hand(hand, letter):
         else:
              return hand
     else:
-        while x in hand.keys():
+        while x==letter:
             x=random.choice(CONSONANTS)
         hand[x]=hand[letter]
         del(hand[letter])
